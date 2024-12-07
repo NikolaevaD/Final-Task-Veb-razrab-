@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="logo.jpg">
+    <title>Вёрстка по шаблону</title>
+
+    <style>
+    
+    body {
+        font-family: 'Courier New', Courier, monospace;
+        margin: 0;
+        padding: 0;
+        background-color: #000;
+        color: #fff;
+    }
+
+    
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 40px;
+        background-color: rgba(0, 0, 0, 0.8);
+        border-bottom: 5px solid #69baff91;
+        margin-top: 4%;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo img {
+        width: 62px;
+        height: 60px;
+        margin-right: 15px;
+        border-radius: 80%;
+    }
+
+    .logo h1 {
+        color: rgb(255, 255, 255);
+        margin: 0;
+        font-size: 24px;
+    }
+
+    .contacts {
+        text-align: right;
+    }
+
+    .contacts p {
+        margin: 0;
+        font-size: 14px;
+    }
+
+    
+    .banner {
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 20px 0;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.8);
+        border-bottom: 2px solid #69baff91;
+        margin-top: 0%;
+    }
+
+    .banner-nav {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .banner-nav li {
+        display: inline-block;
+        margin: 0 16px;
+    }
+
+    .banner-nav a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+        padding: 10px 40px;
+        font-weight: 100;
+    }
+
+    .banner-nav a:hover {
+        color: #9e99998f;
+    }
+
+    
+    .image-block {
+        width: 100%;
+        height: 150px;
+        background: url('./CNC.jpg') no-repeat center center;
+        background-size: cover;
+        position: relative;
+        border-bottom: 5px solid #69baff91;
+    }
+
+    
+    .info-block {
+        display: flex;
+        justify-content: space-between;
+        padding: 50px;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .info-block img {
+        width: 450px;
+        height: 450px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+        margin-left: 10%;
+    }
+
+    .info-text {
+        max-width: 50%;
+        color: #fff;
+        text-align: left;
+        padding-left: 20px;
+        margin-right: 5%;
+    }
+
+    .info-text h2 {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .info-text p {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    
+    .nav-bar {
+        width: 100%;
+        height: 60px;
+        background: #141414;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 3;
+        font-size: 16px;
+    }
+
+    .nav-links-desktop {
+        list-style: none;
+        display: inline-flex;
+        padding: 0;
+    }
+
+    .nav-links-desktop a {
+        color: #ffffff;
+        text-decoration: none;
+        margin: 0 18px;
+        font-size: 13pt;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: 500;
+        margin-left: 0%;
+    }
+    
+    .nav-links-desktop a:hover {
+        color: #00ffcc;
+    }
+    </style>
+
+</head>
+<body>
+    <div class="nav-bar">
+        <ul class="nav-links-desktop">
+            <a href="index.html">Регистрация участников</a>
+            <a href="">-</a>
+            <a href="2.html">Фотогалерея</a>
+            <a href="">-</a>
+            <a href="3.html">Регистрация на сайт</a>
+            <a href="">-</a>
+            <a href="Twitter.html">МиниТвитер</a>
+            <a href="">-</a>
+            <a href="Test.html">Тест</a>
+            <a href="">-</a>
+            <a href="http://machinecnc.tilda.ws/">Лейдинг Tilda</a>
+            <a href="">-</a>
+            <a href="indexx.html">Вёрстка по шаблону</a>
+        </ul>
+    </div>
+
+    
+    <div class="header">
+        <div class="logo">
+            <img src="logo.jpg" alt="Логотип">
+            <h1>CNC MACHINE</h1>
+        </div>
+        <div class="contacts">
+            <p>+7 (495) 123-45-67</p>
+            <p>+7 (800) 700-66-55</p>
+        </div>
+    </div>
+
+    
+    <div class="banner">
+        <ul class="banner-nav">
+            <li><a href="#home">Главная</a></li>
+            <li><a href="#equipment">Наше оборудование</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+        </ul>
+    </div>
+
+    
+    <div class="image-block"></div>
+
+    
+    <div class="info-block">
+        <img src="stanok.jpg" alt="Фото оборудования">
+        <div class="info-text">
+            <h2>Универсальный 5-осевой обрабатывающий центр UMC-750 HAAS</h2>
+            <p>5-осевая обработка представляет собой эффективное решение, позволяющее снизить настройки и повысить точность обработки деталей со сложными формами и несколькими сторонами.</p>
+        </div>
+    </div>
+
+    
+<footer style="background-color: rgba(53, 50, 50, 0.527); padding: 10px 0; color: #fff; text-align: center;">
+    
+    <div style="margin-bottom: 20px;">
+        <p style="font-size: 16px;">Контактная информация:</p>
+        <p>Телефон: + 7 (999) 888-77-66</p>
+        <p>Email: CNCMACHINE@cnc.com</p>
+    </div>
+    <div>
+        <p style="font-size: 14px;">Все права защищены.</p>
+        <p style="font-size: 14px;">&copy; iT Daria Nikolaeva 2024 - 2025</p>
+        
+    </div>
+</footer>
+</body>
+</html>

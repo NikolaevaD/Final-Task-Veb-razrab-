@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="рег.png">
+    <title>Регистрация и Вход</title>
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #000;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        margin: 0;
+        background-image: url(./лес\ вод..avif);
+        background-size: cover;
+        backdrop-filter: blur(5px);
+    }
+
+    .form-container {
+        background: rgba(0, 0, 0, 0.828);
+        padding: 90px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.5), 0 0 30px rgba(0, 255, 255, 0.2);
+        width: 400px;
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    h2 {
+        color: #0ff;
+        text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+        margin-bottom: 40px;
+        font-size: 31.1px;
+        margin-top: 0%;
+                }
+
+    label {
+        display: block;
+        text-align: left;
+        margin-bottom: 10px;
+        font-weight: bold;
+        color: #0ff;
+    }
+
+    input[type="text"], input[type="password"] {
+        width: 90%;
+        padding: 12px;
+        margin-bottom: 20px;
+        border: 1px solid #0ff;
+        border-radius: 5px;
+        background: #000;
+        color: #0ff;
+        font-size: 16px;
+    }
+
+    .checkbox-container {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        margin-bottom: 20px;
+    }
+
+    .checkbox-container input {
+        margin-right: 10px;
+    }
+
+    .checkbox-container label {
+        font-size: 20px;
+        color: #0ff;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        background-color: #0ff;
+        color: #000;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .message {
+        color: #1aff00;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    .nav-bar {
+        width: 100%;
+        height: 60px;
+        background: #141414;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 3;
+        font-size: 16px;
+    }
+
+    .nav-links-desktop {
+        list-style: none;
+        display: flex;
+        margin: 0;
+    }
+
+    .nav-links-desktop a {
+        color: #ffffff;
+        text-decoration: none;
+        margin: 0 18px;
+        font-size: 13pt;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: 500;
+        margin-left: 0%;
+    }
+
+    .nav-links-desktop a:hover {
+        color: #918d8d;
+    }
+
+    .bottom-text {
+        text-align: center;
+        color: #000000;
+        margin-top: 20px;
+    }
+    </style>
+
+</head>
+<body>
+    <div class="nav-bar">
+        <ul class="nav-links-desktop">
+            <a href="index.html">Регистрация участников</a>
+            <a href="">-</a>
+            <a href="2.html">Фотогалерея</a>
+            <a href="">-</a>
+            <a href="3.html">Регистрация на сайт</a>
+            <a href="">-</a>
+            <a href="Twitter.html">МиниТвитер</a>
+            <a href="">-</a>
+            <a href="Test.html">Тест</a>
+            <a href="">-</a>
+            <a href="http://machinecnc.tilda.ws/">Лейдинг Tilda</a>
+            <a href="">-</a>
+            <a href="indexx.html">Вёрстка по шаблону</a>
+        </ul>
+    </div>
+
+    
+    <div id="registration-form" class="form-container" style="display: block;">
+        <h2>&#127807Добро пожаловать&#127807;</h2>
+        <h2>Регистрация на сайт</h2>
+        <form onsubmit="registerUser(event)">
+            <label for="login">Логин:</label>
+            <input type="text" id="login" required pattern="[A-Za-z0-9_-]+">
+
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" required minlength="6">
+
+            <div class="checkbox-container">
+                <input type="checkbox" id="remember" name="remember">
+                <label for="remember">Сохранить данные</label>
+            </div>
+
+            <div class="message" id="register-message"></div>
+
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+    </div>
+
+    
+    <div id="login-form" class="form-container" style="display: none;">
+        <h2>Вход</h2>
+        <form onsubmit="loginUser(event)">
+            <label for="login">Логин:</label>
+            <input type="text" id="login-input" required>
+
+            <label for="password">Пароль:</label>
+            <input type="password" id="password-input" required>
+
+            <div class="checkbox-container">
+                <input type="checkbox" id="auto-login" name="auto-login">
+                <label for="auto-login">Автоматически авторизоваться</label>
+            </div>
+
+            <div class="message" id="login-message"></div>
+
+            <button type="submit">Войти</button>
+        </form>
+    </div>
+
+    
+    <script>
+        let users = []; // Инициализируем массив пользователей
+
+// Проверяем уникальность логина
+function isLoginUnique(login) {
+    return !users.some(user => user?.login === login); // Используем безопасный доступ
+}
+
+// Функция для регистрации
+function registerUser(event) {
+    event.preventDefault();
+    const login = document.getElementById('login').value;
+    const password = document.getElementById('password').value;
+    const remember = document.getElementById('remember').checked;
+    const message = document.getElementById('register-message');
+
+    // Удаляем повреждённые данные из массива
+    users = users.filter(user => user && user.login);
+
+    if (isLoginUnique(login)) {
+        users.push({ login, password });
+        if (remember) {
+            localStorage.setItem('users', JSON.stringify(users));
+        }
+        message.textContent = 'Регистрация прошла успешно! Перенаправление на вход...';
+        setTimeout(showLoginForm, 1000);
+    } else {
+        message.textContent = 'Пользователь с таким логином уже существует!';
+    }
+}
+
+// Отображаем форму входа
+function showLoginForm() {
+    document.getElementById('registration-form').style.display = 'none';
+    document.getElementById('login-form').style.display = 'block';
+}
+
+// Загрузка данных при запуске
+window.onload = function() {
+    const savedUsers = localStorage.getItem('users');
+    if (savedUsers) {
+        try {
+            users = JSON.parse(savedUsers) || [];
+        } catch (error) {
+            console.error("Ошибка при чтении данных из localStorage:", error);
+            users = [];
+        }
+    }
+
+    const currentUser = JSON.parse(localStorage.getItem('currentUser') || sessionStorage.getItem('currentUser'));
+    if (currentUser) {
+        window.location.href = 'messages.html';
+    }
+};
+
+    </script>
+    <p class="bottom-text">&copy; iT Daria Nikolaeva 2024 - 2025</p>
+</body>
+</html>

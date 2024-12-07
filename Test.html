@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="тест.png">
+    <title>Тест по веб-программированию</title>
+    
+    <style>
+    
+    body {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        background-color: #0D0D0D;
+        color: #E0E0E0;
+        text-align: center;
+        background: linear-gradient(45deg, #2e6292, #500e5e);
+        background-size: cover;
+        background-image: url(./Лес.png);
+        backdrop-filter: blur(7px);
+        margin: 0;
+        padding-top: 0px;
+    }
+
+    h1, h2 {
+        color: #ffffff;
+        text-shadow:0 0 20px #9B59B6, 0 0 30px #9B59B6;
+        margin-top: -1%;
+        font-size: 32pt;
+        -webkit-text-stroke: 2px #a200ff;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .question {
+        background-color: #00000092;
+        border-radius: 10px;
+        padding: 50px;
+        margin: 30px;
+        flex-basis: 30%;
+        box-shadow: 0 0 15px #f611c0, 0 0 50px #9B59B6;
+        display: flex;
+        flex-direction: column;
+        border: 3px solid rgba(255, 255, 255, 0.74);
+    }
+
+    label {
+        font-size: 14pt;
+        display: block;
+        margin-top: 10px;
+        text-align: left;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .options {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    
+    .options label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        text-align: left;
+    }
+
+    .options label span {
+        display: inline-block;
+        min-width: 200px;
+        margin-right: 10px;
+    }
+
+    input[type="radio"], input[type="checkbox"] {
+        margin-left: 10px;
+    }
+
+    input, select, textarea {
+        background-color: #0D0D0D;
+        color: #9B59B6;
+        border: 1px solid #9B59B6;
+        padding: 7px;
+        border-radius: 0px;
+        width: 80%;
+        margin: 5px 0;
+    }
+
+    button {
+        background-color: #9B59B6;
+        box-shadow: 0 0 15px #f611c0, 0 0 20px #9B59B6;
+        color: #0D0D0D;
+        border: none;
+        padding: 23px 100px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 30px;
+    }
+
+    button:hover {
+        box-shadow: 0 0 10px #9B59B6, 0 0 20px #9B59B6;
+    }
+
+    
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .modal-content {
+        background-color: #222;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #9B59B6;
+        border-radius: 0px;
+        width: 35%;
+        color: #9B59B6;
+    }
+
+    .close {
+        color: #9B59B6;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #fff;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .nav-bar {
+        width: 100%;
+        height: 60px;
+        background: #000000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 3;
+        font-size: 16px;
+    }
+
+    .nav-links-desktop {
+        list-style: none;
+        display: flex;
+        margin: 0;
+    }
+
+    .nav-links-desktop a {
+        color: #ffffff;
+        text-decoration: none;
+        margin: 0 18px;
+        font-size: 13pt;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: 500;
+        margin-left: 0%;
+    }
+
+    .nav-links-desktop a:hover {
+        color: #918d8d;
+    }
+
+    .bottom-text {
+        text-align: center;
+        color: #c4bec4;
+        margin-top: 80px;
+    }
+    </style>
+</head>
+<body>
+    <div class="nav-bar">
+        <ul class="nav-links-desktop">
+            <a href="index.html">Регистрация участников</a>
+            <a href="">-</a>
+            <a href="2.html">Фотогалерея</a>
+            <a href="">-</a>
+            <a href="3.html">Регистрация на сайт</a>
+            <a href="">-</a>
+            <a href="Twitter.html">МиниТвитер</a>
+            <a href="">-</a>
+            <a href="Test.html">Тест</a>
+            <a href="">-</a>
+            <a href="http://machinecnc.tilda.ws/">Лейдинг Tilda</a>
+            <a href="">-</a>
+            <a href="indexx.html">Вёрстка по шаблону</a>
+        </ul>
+    </div>
+
+    <h1></br>Тест по веб-программированию</br></h1>
+    
+    <form id="quizForm">
+        <div class="container">
+            <!-- Вопрос 1 -->
+            <div class="question">
+                <label>1. Какой язык используется для описания стилей веб-страниц?</label>
+                <input type="text" name="q1" placeholder="Введите язык">
+            </div>
+
+            <!-- Вопрос 2 -->
+            <div class="question">
+                <label>2. Какой элемент HTML используется для создания ссылок?</label>
+                <div class="options">
+                    <label><span>1. &lt;a&gt;</span><input type="radio" name="q2" value="a"></label>
+                </div>
+                <div class="options">
+                    <label><span>2. &lt;link&gt;</span><input type="radio" name="q2" value="link"></label>
+                </div>
+                <div class="options">
+                    <label><span>3. &lt;href&gt;</span><input type="radio" name="q2" value="href"></label>
+                </div>
+                <div class="options">
+                    <label><span>4. &lt;url&gt;</span><input type="radio" name="q2" value="url"></label>
+                </div>
+            </div>
+
+            <!-- Вопрос 3 -->
+            <div class="question">
+                <label>3. Какой тег используется для создания таблицы?</label>
+                <select name="q3">
+                    <option value="table">1. &lt;table&gt;</option>
+                    <option value="grid">2. &lt;grid&gt;</option>
+                    <option value="tab">3. &lt;tab&gt;</option>
+                    <option value="tbl">4. &lt;tbl&gt;</option>
+                </select>
+            </div>
+
+            <!-- Вопрос 4 -->
+            <div class="question">
+                <label>4. Какой атрибут задает источник изображения в теге &lt;img&gt;?</label>
+                <div class="options">
+                    <label><span>1. src</span><input type="radio" name="q4" value="src"></label>
+                </div>
+                <div class="options">
+                    <label><span>2. href</span><input type="radio" name="q4" value="href"></label>
+                </div>
+                <div class="options">
+                    <label><span>3. link</span><input type="radio" name="q4" value="link"></label>
+                </div>
+                <div class="options">
+                    <label><span>4. url</span><input type="radio" name="q4" value="url"></label>
+                </div>
+            </div>
+
+            <!-- Вопрос 5 -->
+            <div class="question">
+                <label>5. Какой тег используется для создания списка?</label>
+                <textarea name="q5" rows="3" placeholder="Введите тег"></textarea>
+            </div>
+
+            <!-- Вопрос 6 -->
+            <div class="question">
+                <label>6. Какой метод HTTP используется для отправки данных на сервер?</label>
+                <div class="options">
+                    <label><span>1. POST</span><input type="checkbox" name="q6" value="POST"></label>
+                </div>
+                <div class="options">
+                    <label><span>2. GET</span><input type="checkbox" name="q6" value="GET"></label>
+                </div>
+                <div class="options">
+                    <label><span>3. PUT</span><input type="checkbox" name="q6" value="PUT"></label>
+                </div>
+                <div class="options">
+                    <label><span>4. DELETE</span><input type="checkbox" name="q6" value="DELETE"></label>
+                </div>
+            </div>
+        </div>
+
+        <button type="button" onclick="checkQuiz()">Проверить тест</button>
+    </form>
+
+    
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="result"></div>
+        </div>
+    </div>
+
+    <script>
+        // Правильные ответы
+        const correctAnswers = {
+            q1: 'css',
+            q2: 'a',
+            q3: 'table',
+            q4: 'src',
+            q5: ['ul', 'ol'],
+            q6: ['POST', 'GET']
+        };
+
+        function checkQuiz() {
+            const form = document.getElementById('quizForm');
+            let score = 0;
+            let incorrect = [];
+
+            // Вопрос 1
+            const q1 = form.q1.value.trim().toLowerCase();
+            if (q1 === correctAnswers.q1) {
+                score++;
+            } else {
+                incorrect.push('1');
+            }
+
+            // Вопрос 2
+            const q2 = Array.from(form.q2)
+                .filter(input => input.checked)
+                .map(input => input.value);
+            if (q2.length === 1 && q2[0] === correctAnswers.q2) {
+                score++;
+            } else {
+                incorrect.push('2');
+            }
+
+            // Вопрос 3
+            const q3 = form.q3.value;
+            if (q3 === correctAnswers.q3) {
+                score++;
+            } else {
+                incorrect.push('3');
+            }
+
+            // Вопрос 4
+            const q4 = form.q4.value;
+            if (q4 === correctAnswers.q4) {
+                score++;
+            } else {
+                incorrect.push('4');
+            }
+
+            // Вопрос 5
+            const q5 = form.q5.value.toLowerCase().split(',').map(s => s.trim());
+            const correctQ5 = correctAnswers.q5;
+            if (q5.length === correctQ5.length && q5.every(val => correctQ5.includes(val))) {
+                score++;
+            } else {
+                incorrect.push('5');
+            }
+
+            // Вопрос 6
+            const q6 = Array.from(form.q6)
+                .filter(input => input.checked)
+                .map(input => input.value);
+            const correctQ6 = correctAnswers.q6;
+            if (q6.length === correctQ6.length && q6.every(val => correctQ6.includes(val))) {
+                score++;
+            } else {
+                incorrect.push('6');
+            }
+
+            
+            document.getElementById('result').innerHTML = `
+                Правильных ответов: ${score}/6<br>
+                Неправильные ответы: ${incorrect.length > 0 ? incorrect.join(', ') : 'нет'}
+            `;
+            document.getElementById('myModal').style.display = "block";
+        }
+
+        
+        function closeModal() {
+            document.getElementById('myModal').style.display = "none"; 
+        }
+
+        
+        window.onclick = function(event) {
+            const modal = document.getElementById('myModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
+    <p class="bottom-text">&copy; iT Daria Nikolaeva 2024 - 2025</p>
+</body>
+</html>

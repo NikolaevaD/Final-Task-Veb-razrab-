@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сообщения</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .message-container {
+            text-align: center;
+            color: #0ff;
+            font-size: 24px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5), 0 0 30px rgba(0, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="message-container">
+        <h1>Добро пожаловать на страницу сообщений!</h1>
+        <p>Здесь будут отображаться ваши сообщения.</p>
+        <button onclick="logout()">Выйти</button>
+    </div>
+
+    <script>
+        function checkAuthorization() {
+            const currentUser = JSON.parse(localStorage.getItem('currentUser') || sessionStorage.getItem('currentUser'));
+            if (!currentUser) {
+                window.location.href = '3.html'; 
+            }
+        }
+
+        function logout() {
+            
+            localStorage.removeItem('currentUser');
+            sessionStorage.removeItem('currentUser');
+
+            
+            window.location.href = '3.html';
+        }
+
+        
+        window.onload = checkAuthorization;
+    </script>
+
+</body>
+</html>

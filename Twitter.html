@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="твит.png">
+    <title>МиниТвиттер</title>
+
+    <style>
+    body {
+        background-color: #1a1a1a;
+        color: #00ff00;
+        font-family: 'Courier New', Courier, monospace;
+        margin: 0;
+        padding: 0px 0 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 18px;
+        background-image: url(./Twitter.png);
+        padding-top: 0%;
+    }
+
+    .nav-bar {
+        width: 100%;
+        height: 60px;
+        background: #000000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 3;
+        font-size: 16px;
+    }
+
+    .nav-links-desktop {
+        list-style: none;
+        display: flex;
+        margin: 0;
+    }
+
+    .nav-links-desktop a {
+        color: #ffffff;
+        text-decoration: none;
+        margin: 0 18px;
+        font-size: 13pt;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: 500;
+        margin-left: 0%;
+    }
+
+    .nav-links-desktop a:hover {
+        color: #918d8d;
+    }
+
+    h1 {
+        -webkit-text-stroke: 2px #065d23;
+        color: #00ff1ad7;
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 32px;
+        text-shadow: 0 0 10px #00ff00;
+    }
+
+    form {
+        margin-bottom: 20px;
+        padding: 38px;
+        border: 2px solid #00ff00;
+        border-radius: 40px;
+        background-color: #122a02ab;
+        box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        max-width: 400px;
+        width: 100%;
+    }
+
+    label {
+        display: block;
+        margin: 10px 0 5px;
+        font-size: 20px;
+    }
+
+    input, textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 2px solid #00ff00;
+        border-radius: 4px;
+        background-color: #444444;
+        color: #00ff00;
+        font-size: 16px;
+        outline: none;
+    }
+
+    input:focus, textarea:focus {
+        border-color: #00cc00;
+    }
+
+    button {
+        padding: 10px 15px;
+        background-color: #00ff00;
+        color: #1a1a1a;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        font-size: 18px;
+        margin-left: 30%;
+    }
+
+    button:hover {
+        background-color: #00cc00;
+    }
+
+    table {
+        width: 80%;
+        border-collapse: separate;
+        margin-top: 30px;
+        font-size: 23px;
+    }
+
+    thead {
+        background-color: #0cfa0c;
+        color: #1a1a1a;
+    }
+
+    th, td {
+        padding: 2px;
+        text-align: center;
+        color: #000000;
+        background-color: #00ff00;
+    
+        border: 3px solid #0d780d;
+    }
+
+    tr:hover {
+        background-color: rgba(14, 210, 14, 0.673);
+    }
+
+    .actions button {
+        background-color: #ff0000;
+        color: rgb(255, 255, 255);
+        border: none;
+        padding: 5px 40px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        font-size: 14px;
+        margin-left: 7%;
+    }
+
+    .actions button:hover {
+        background-color: #ff1a1a;
+    }
+
+    .gif img {
+        width: 150px;
+        height: 150px;
+        margin: -38%;
+        margin-left: -16%;
+        margin-top: 0%;
+    }
+    .bottom-text {
+        text-align: center;
+        color: #c4bec4;
+        margin-top: 20px;
+    }
+    </style>
+
+</head>
+<body>
+    <div class="nav-bar">
+        <ul class="nav-links-desktop">
+            <a href="index.html">Регистрация участников</a>
+            <a href="">-</a>
+            <a href="2.html">Фотогалерея</a>
+            <a href="">-</a>
+            <a href="3.html">Регистрация на сайт</a>
+            <a href="">-</a>
+            <a href="Twitter.html">МиниТвитер</a>
+            <a href="">-</a>
+            <a href="Test.html">Тест</a>
+            <a href="">-</a>
+            <a href="http://machinecnc.tilda.ws/">Лейдинг Tilda</a>
+            <a href="">-</a>
+            <a href="indexx.html">Вёрстка по шаблону</a>
+        </ul>
+    </div>
+
+    <div class="gif">
+        <img src="Гиф.gif"></div>
+
+    <h1>МиниТвиттер	&#128233;</h1>
+    
+    
+    <form id="messageForm">
+        <label for="Имя">Получатель (обязательное поле):</label>
+        <input type="text" id="Имя" name="Имя" required>
+        <label for="Сообщение">Сообщение:</label>
+        <textarea id="Сообщение" name="Сообщение" rows="4" required></textarea>
+        <button type="submit">Отправить &#128232;</button>
+    </form>
+
+   
+    <table>
+        <thead>
+            <tr>
+                <th>- Получатель -</th>
+                <th>- Сообщение -</th>
+                <th>- Действие -</th>
+            </tr>
+        </thead>
+        <tbody id="messagesTable">
+           
+        </tbody>
+    </table>
+
+    <script>
+        
+        let сообщение = [];
+
+        
+        function loadMessages() {
+            const tableBody = document.getElementById('messagesTable');
+            tableBody.innerHTML = ''; 
+            сообщение.forEach((msg, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${msg.username}</td>
+                    <td>${msg.message}</td>
+                    <td class="actions">
+                        <button onclick="deleteMessage(${index})">Удалить</button>
+                    </td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        
+        document.getElementById('messageForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('Имя').value;
+            const message = document.getElementById('Сообщение').value;
+
+            
+            сообщение.push({ username, message });
+
+            loadMessages();
+            document.getElementById('messageForm').reset();
+        });
+
+        
+        function deleteMessage(index) {
+            if (confirm("Подтверждаете удаление сообщения?")) {
+                сообщение.splice(index, 1);
+                loadMessages();
+            }
+        }
+
+        window.onload = loadMessages;
+    </script>
+    <p class="bottom-text">&copy; iT Daria Nikolaeva 2024 - 2025</p>
+</body>
+</html>

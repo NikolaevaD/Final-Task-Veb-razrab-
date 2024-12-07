@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Иконка.png">
+    <title>Фотогалерея CNC</title>
+    <link rel="stylesheet" href="2.css">
+    <script src="2.js"></script>
+</head>
+<body>
+        <div class="background"></div>
+      <div class="background">
+        <div class="blur"></div>
+      </div>
+      
+      <div class="nav-bar">
+        <ul class="nav-links-desktop">
+            <a href="index.html">Регистрация участников</a>
+            <a href="">-</a>
+            <a href="2.html">Фотогалерея</a>
+            <a href="">-</a>
+            <a href="3.html">Регистрация на сайт</a>
+            <a href="">-</a>
+            <a href="Twitter.html">МиниТвитер</a>
+            <a href="">-</a>
+            <a href="Test.html">Тест</a>
+            <a href="">-</a>
+            <a href="http://machinecnc.tilda.ws/">Лейдинг Tilda</a>
+            <a href="">-</a>
+            <a href="indexx.html">Вёрстка по шаблону</a>
+        </ul>
+    </div>
+
+    <h1>Фотогалерея</h1>
+    <h2>Фрезерные станки с ЧПУ последнего поколения: инновации в производстве</h2>
+        <div class="gallery">
+        <div class="photo" onclick="openModal(0)">
+            <img src="1.webp" alt="Фото">
+        </div>
+        <div class="photo" onclick="openModal(1)">
+            <img src="11.webp" alt="Фото11">
+        </div>
+        <div class="photo" onclick="openModal(2)">
+            <img src="3.webp" alt="Фото3">
+        </div>
+        <div class="photo" onclick="openModal(3)">
+            <img src="4.webp" alt="Фото4">
+        </div>
+        <div class="photo" onclick="openModal(4)">
+            <img src="5.webp" alt="Фото5">
+        </div>
+        <div class="photo" onclick="openModal(5)">
+            <img src="6.webp" alt="Фото6">
+        </div>
+        <div class="photo" onclick="openModal(6)">
+            <img src="7.webp" alt="Фото7">
+        </div>
+        <div class="photo" onclick="openModal(7)">
+            <img src="8.webp" alt="Фото8">
+        </div>
+        <div class="photo" onclick="openModal(8)">
+            <img src="9.webp" alt="Фото9">
+        </div>
+        <div class="photo" onclick="openModal(9)">
+            <img src="10.webp" alt="Фото10">
+        </div>
+        <div class="photo" onclick="openModal(10)">
+            <img src="2.webp" alt="Фото2">
+        </div>
+        <div class="photo" onclick="openModal(11)">
+            <img src="12.webp" alt="Фото12">
+    </div>
+
+ 
+    <div id="modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImg">
+        <div class="modal-controls">
+            <span class="prev" onclick="changePhoto(-1)">&#10094;</span>
+            <span class="next" onclick="changePhoto(1)">&#10095;</span>
+        </div>
+    </div>
+    <p class="bottom-text">&copy; iT Daria Nikolaeva 2024 - 2025</p>
+</body>
+</html>
